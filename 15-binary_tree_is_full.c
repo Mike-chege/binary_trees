@@ -33,7 +33,7 @@ int binary_tree_check_full(const binary_tree_t *tree)
 	}
 	if ((tree->right && !tree->left) || (tree->left && !tree->right))
 	{
-		return (0);
+		return (1);
 	}
 	not_full += binary_tree_check_full(tree->left);
 	not_full += binary_tree_check_full(tree->right);
