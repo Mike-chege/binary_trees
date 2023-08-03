@@ -5,6 +5,7 @@ size_t binary_tree_hgt(const binary_tree_t *tree);
 int binary_tree_balance(const binary_tree_t *tree);
 int binary_tree_check_full(const binary_tree_t *tree);
 int binary_tree_is_full(const binary_tree_t *tree);
+int binary_tree_is_perfect(const binary_tree_t *tree);
 
 /**
  * binary_tree_is_perfect - Checks if binary tree is perfect
