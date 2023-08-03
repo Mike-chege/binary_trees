@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include "binary_trees.h"
 
-size_t binary_tree_hgt(const binary_tree_t *tree);
+size_t get_binary_tree_height(const binary_tree_t *tree);
 int binary_tree_balance(const binary_tree_t *tree);
 int binary_tree_check_full(const binary_tree_t *tree);
 int binary_tree_is_full(const binary_tree_t *tree);
-int binary_tree_is_perfect(const binary_tree_t *tree);
 
 /**
  * binary_tree_is_perfect - Checks if binary tree is perfect
@@ -76,17 +75,17 @@ int binary_tree_balance(const binary_tree_t *tree)
 	{
 		return (0);
 	}
-	left_h = binary_tree_hgt(tree->left);
-	right_h = binary_tree_hgt(tree->right);
+	left_h = get_binary_tree_height(tree->left);
+	right_h = get_binary_tree_height(tree->right);
 	return (left_h - right_h);
 }
 
 /**
- * binary_tree_hgt - Counts the height of binary tree
+ * get_binary_tree_height - Counts the height of binary tree
  * @tree: Pointer to the root node to get height from
  * Return: The height of the tree
  */
-size_t binary_tree_hgt(const binary_tree_t *tree)
+size_t get_binary_tree_height(const binary_tree_t *tree)
 {
 	size_t left_h = 0;
 	size_t right_h = 0;
@@ -95,7 +94,7 @@ size_t binary_tree_hgt(const binary_tree_t *tree)
 	{
 		return (0);
 	}
-	left_h += (tree) ? 1 + binary_tree_hgt(tree->left) : 0;
-	right_h += (tree) ? 1 + binary_tree_hgt(tree->right) : 0;
+	left_h += (tree) ? 1 + get_binary_tree_height(tree->left) : 0;
+	right_h += (tree) ? 1 + get_binary_tree_height(tree->right) : 0;
 	return ((right_h > left_h) ? right_h : left_h);
 }
